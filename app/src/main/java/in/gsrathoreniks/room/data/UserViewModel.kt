@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 //ViewModel provide data to the UI and survive configuration changes
 class UserViewModel(application: Application): AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<User>>
+    val readAllData: LiveData<List<User>>
     private val repository: UserRepository
 
 //    init block is executed FIRST when ViewModel is created
