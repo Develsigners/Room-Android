@@ -1,7 +1,7 @@
 package `in`.gsrathoreniks.room.data
 
+import `in`.gsrathoreniks.room.model.User
 import android.content.Context
-import android.service.autofill.UserData
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase

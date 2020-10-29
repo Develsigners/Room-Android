@@ -1,5 +1,6 @@
 package `in`.gsrathoreniks.room.data
 
+import `in`.gsrathoreniks.room.model.User
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert

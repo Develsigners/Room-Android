@@ -1,5 +1,7 @@
-package `in`.gsrathoreniks.room.data
+package `in`.gsrathoreniks.room.data.repository
 
+import `in`.gsrathoreniks.room.data.UserDao
+import `in`.gsrathoreniks.room.model.User
 import androidx.lifecycle.LiveData
 
 /*

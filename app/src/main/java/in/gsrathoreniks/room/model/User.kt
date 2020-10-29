@@ -1,4 +1,4 @@
-package `in`.gsrathoreniks.room.data
+package `in`.gsrathoreniks.room.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
