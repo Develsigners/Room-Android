@@ -2,11 +2,11 @@ package `in`.gsrathoreniks.room.fragments.list
 
 import `in`.gsrathoreniks.room.R
 import `in`.gsrathoreniks.room.viewmodel.UserViewModel
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -43,7 +43,33 @@ class ListFragment : Fragment() {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
 
+//        Add Menu
+        setHasOptionsMenu(true)
+
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.delete){
+            deleteAllUsers()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteAllUsers() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_,_->
+            mUserViewModel.deleteAllUsers()
+            Toast.makeText(requireContext(),"Deleted all users!", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNegativeButton("No"){_,_-> }
+        builder.setTitle("Delete All?")
+        builder.setMessage("Are you sure you want to delete all users?")
+        builder.create().show()
     }
 
 }
