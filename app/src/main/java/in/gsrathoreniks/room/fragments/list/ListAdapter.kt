@@ -5,6 +5,7 @@ import `in`.gsrathoreniks.room.model.User
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item.view.*
 
@@ -30,6 +31,11 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.firstname.text = currentItem.firstName
         holder.itemView.lastname.text = currentItem.lastName
         holder.itemView.age.text = currentItem.age.toString()
+
+        holder.itemView.rowLayout.setOnClickListener{
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
     fun setData(user: List<User>){
         this.userList = user

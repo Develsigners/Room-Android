@@ -25,12 +25,21 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         readAllData = repository.readAllData
     }
 
-//    function to add user to the repository
+    //    function to add user to the repository
     fun addUser(user: User){
 //    viewModelScope is part of coroutines
 //    Dispatchers.IO will make sure the function will be running in background thread
         viewModelScope.launch(Dispatchers.IO){
             repository.addUser(user)
+        }
+    }
+
+    //    function to update user to the repository
+    fun updateUser(user: User){
+//    viewModelScope is part of coroutines
+//    Dispatchers.IO will make sure the function will be running in background thread
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateUser(user)
         }
     }
 }
