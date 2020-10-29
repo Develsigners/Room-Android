@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 
 
 class AddFragment : Fragment() {
@@ -55,6 +56,7 @@ class AddFragment : Fragment() {
 //            Add data to Database
             mUserViewModel.addUser(user)
             Toast.makeText(context,"Successfully added",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }
     }
 

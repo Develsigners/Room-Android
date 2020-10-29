@@ -12,11 +12,19 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(user: User)
 
-//    Query to return all the user, the list will be wrapped in the LiveData
+    //    Query to return all the user, the list will be wrapped in the LiveData
     @Query("SELECT * FROM user_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<User>>
 
-//    Function to update the existing user
+    //    Function to update the existing user
     @Update
     suspend fun updateUser(user: User)
+
+    //    Function to delete a single user
+    @Delete
+    suspend fun deleteUser(user: User)
+
+    //    Function to delete all of the existing user
+    @Query("DELETE FROM user_table")
+    suspend fun deleteAllUsers()
 }

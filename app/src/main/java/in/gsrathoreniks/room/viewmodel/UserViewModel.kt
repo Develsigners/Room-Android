@@ -42,4 +42,22 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
             repository.updateUser(user)
         }
     }
+
+    //    function to delete user
+    fun deleteUser(user: User){
+//    viewModelScope is part of coroutines
+//    Dispatchers.IO will make sure the function will be running in background thread
+        viewModelScope.launch(Dispatchers.IO){
+            repository.deleteUser(user)
+        }
+    }
+
+    //    function to delete all users
+    fun deleteAllUsers(){
+//    viewModelScope is part of coroutines
+//    Dispatchers.IO will make sure the function will be running in background thread
+        viewModelScope.launch(Dispatchers.IO){
+            repository.deleteAllUsers()
+        }
+    }
 }
