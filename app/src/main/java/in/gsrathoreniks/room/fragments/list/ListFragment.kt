@@ -1,7 +1,7 @@
 package `in`.gsrathoreniks.room.fragments.list
 
 import `in`.gsrathoreniks.room.R
-import `in`.gsrathoreniks.room.data.UserViewModel
+import `in`.gsrathoreniks.room.viewmodel.UserViewModel
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

@@ -1,9 +1,8 @@
 package `in`.gsrathoreniks.room.fragments.add
 
 import `in`.gsrathoreniks.room.R
-import `in`.gsrathoreniks.room.data.User
-import `in`.gsrathoreniks.room.data.UserViewModel
-import android.icu.number.IntegerWidth
+import `in`.gsrathoreniks.room.model.User
+import `in`.gsrathoreniks.room.viewmodel.UserViewModel
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -14,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.annotation.Nullable
 import androidx.lifecycle.ViewModelProvider
 
 

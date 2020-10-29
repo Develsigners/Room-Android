@@ -1,5 +1,7 @@
-package `in`.gsrathoreniks.room.data
+package `in`.gsrathoreniks.room.data.repository
 
+import `in`.gsrathoreniks.room.data.UserDao
+import `in`.gsrathoreniks.room.model.User
 import androidx.lifecycle.LiveData
 
 /*
@@ -16,5 +18,10 @@ class UserRepository (private val userDao: UserDao){
 //    call UserDao and add new User
     suspend fun addUser(user: User){
         userDao.addUser(user)
+    }
+
+//    a suspend function to update the existing user in DB
+    suspend fun updateUser(user: User){
+        userDao.updateUser(user)
     }
 }
